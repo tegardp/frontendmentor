@@ -1,8 +1,8 @@
-import QRCodeComponent from "./qr-code-component";
+import LifeCalendarComponent from "./life-calendar-component";
 
 function App() {
   return (
-    <QRCodeComponent />
+    <LifeCalendarComponent />
   );
 }
 
