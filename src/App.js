@@ -1,8 +1,8 @@
-import InteractiveRatingComponentPage from "./interactive-rating-component";
+import QRCodeComponent from "./qr-code-component";
 
 function App() {
   return (
-    <InteractiveRatingComponentPage />
+    <QRCodeComponent />
   );
 }
 

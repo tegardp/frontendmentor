@@ -1,4 +1,4 @@
-import "../assets/app.css";
+import "../assets/style.css";
 import iconStar from "../assets/icon-star.svg";
 
 const RateUs = ({rate, handleClick, redirectToPage}) => {

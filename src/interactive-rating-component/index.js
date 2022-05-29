@@ -1,4 +1,3 @@
-import "./assets/app.css";
 import ThankYou from "./components/ThankYou";
 import { useState } from "react";
 import RateUs from "./components/RateUs";

@@ -1,4 +1,4 @@
-import "../assets/app.css";
+import "../assets/style.css";
 import thankYouSvg from "../assets/illustration-thank-you.svg";
 
 const ThankYou = ({rate}) => {
