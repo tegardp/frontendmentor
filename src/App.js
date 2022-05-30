@@ -1,8 +1,8 @@
-import NFTPreviewCardComponent from "./nft-preview-card-component-main";
+import OrderSummaryComponent from "./components/order-summary-component-main";
 
 function App() {
   return (
-    <NFTPreviewCardComponent />
+    <OrderSummaryComponent />
   );
 }
 

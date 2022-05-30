@@ -1,8 +1,7 @@
 const UserInput = ({ date, lifeExpectancy, onHandleSubmit }) => {
   return (
     <form onSubmit={(e) => {
-        e.preventDefault();
-        onHandleSubmit(e.target.date_of_birth.value, e.target.life_expectancy.value);
+        onHandleSubmit(e);
       }}>
       <label
         htmlFor="date-of-birth"
