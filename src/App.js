@@ -1,8 +1,8 @@
-import LifeCalendarComponent from "./life-calendar-component";
+import NFTPreviewCardComponent from "./nft-preview-card-component-main";
 
 function App() {
   return (
-    <LifeCalendarComponent />
+    <NFTPreviewCardComponent />
   );
 }
 
