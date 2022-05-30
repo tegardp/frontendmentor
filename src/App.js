@@ -1,8 +1,8 @@
-import OrderSummaryComponent from "./components/order-summary-component-main";
+import AdviceGeneratorApp from "./components/advice-generator-app-main";
 
 function App() {
   return (
-    <OrderSummaryComponent />
+    <AdviceGeneratorApp />
   );
 }
 
