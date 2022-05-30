@@ -1,48 +1,51 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import LifeExpectancy from "./components/LifeExpectancy";
+import LifeTracking from "./components/LifeTracking";
 import UserInput from "./components/UserInput";
 
 const LifeCalendarComponent = () => {
-  const [date, setDate] = useState();
-  const [lifeExpectancy, setLifeExpectancy] = useState([]);
+  const [date, setDate] = useState([]);
+  const [lifeExpectancy, setLifeExpectancy] = useState();
+  const [track, setTrack] = useState(0);
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const birthValue = await e.target.date_of_birth.value;
-    const lifeExpectancy = await e.target.life_expectancy.value;
-    setDate(birthValue);
-    setLifeExpectancy([...Array(lifeExpectancy).keys()]);
+    try {
+      const birthValue = await e.target.date_of_birth.value;
+      const lifeExpectancy = await e.target.life_expectancy.value;
+      setDate([...date, birthValue]);
+      setLifeExpectancy(lifeExpectancy);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
-  useEffect(() => {
-    setLifeExpectancy(lifeExpectancy);
-  }, [lifeExpectancy]);
+  const addTrack = () => {
+    setTrack(track + 1);
+  };
+
+  const removeTrack = () => {
+    if (track > 1) {
+      setTrack(track - 1);
+    }
+  };
 
   return (
     <div className="flex">
       <div className="w-1/4">
-        <UserInput
-          date={date}
-          lifeExpectancy={lifeExpectancy}
-          onHandleSubmit={handleSubmit}
-        />
+        <div className="p-5">
+          <UserInput
+            date={date}
+            lifeExpectancy={lifeExpectancy}
+            onHandleSubmit={handleSubmit}
+          />
+        </div>
+        <div className="p-5">
+          <LifeTracking track={track} addTrack={addTrack} removeTrack={removeTrack} />
+        </div>
       </div>
       <div className="w-3/4">
-        <h1 className="text-2xl font-bold text-center">Life Expectancy</h1>
-        <div className="p-5">
-          {lifeExpectancy &&
-            lifeExpectancy.map((i) => (
-              <div className="flex" key={i}>
-                {[...Array(52).keys()].map((j) => (
-                  <div
-                    className="h-2 w-2border-solid border-2 border-gray-900 m-0.5"
-                    key={j}
-                  >
-                    {lifeExpectancy}
-                  </div>
-                ))}
-              </div>
-            ))}
-        </div>
+        <LifeExpectancy lifeExpectancy={lifeExpectancy} dateCollection={date} />
       </div>
     </div>
   );

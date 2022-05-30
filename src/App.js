@@ -1,8 +1,8 @@
-import AdviceGeneratorApp from "./components/advice-generator-app-main";
+import LifeCalendarComponent from "./components/life-calendar-component";
 
 function App() {
   return (
-    <AdviceGeneratorApp />
+    <LifeCalendarComponent />
   );
 }
 
